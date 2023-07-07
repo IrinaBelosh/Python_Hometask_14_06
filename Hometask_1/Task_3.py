@@ -25,6 +25,17 @@ if len(number)==6:
         print("Not lucky")
 else:
     print("Number is too short")
+
+# решение через срезы строки
+number = input("Enter the number of the ticket: ")
+if len(number)==6:
+    left = int(number[0]) + int(number[1]) + int(number[2])
+    right = int(number[3]) + int(number[4]) + int(number[5])
+if left==right:
+    print('YES')
+else:
+    print('NO')
+
     
 
     
