@@ -10,68 +10,25 @@
 # В рассмотренном примере в итоге получим a2bc3a.
 # Вводится строка, нужно сжать ее по алгоритму, описанному выше.
 
-
 line = input('Enter the line: ')
 listt = []
-temp = ''
-i = 0
-while i + 1 < len(line):
-    if line[i] != line[i + 1]:
-        temp = temp+line[i]
-        listt.append(temp)
-        temp = ''
-        i += 1
-    if line[i] == line[i+1]:
+temp = line[0]
+i = 1
+while i < len(line): #
+    if line[i-1] != line[i]: #
+        listt.append(temp) #
+        temp = line[i] #b
+    if line[i-1] == line[i]:
         temp = temp + line [i]
-        i +=1
-if line[-1] == line[-2]:
-    temp = temp+line[-1]
+    i +=1
+if temp:
     listt.append(temp)
-else:
-    listt.append(line[-1])
-
 print(listt)
-temp_list = []
-for i in range(len(listt)):
-    r = str(listt[i])
-    var = r[0]
-    if len(r) != 1:
-        temp_list.append(len(r))
-    temp_list.append(var)
-print(''.join(map(str,temp_list)))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-#     count = 0
-#     for j in line:
-#         if i == j:
-#             count+=1
-#     dict[i] = count
-# print(dict)
-# for i in dict:
-#     if dict[i] > max:
-#         max = dict[i]
-# for k, v in dict.items():
-#     if v == max:
-#         print(k, v)
-
-
-
-
-
-
-   
-
-
-    
+res_str = ''
+for strr in listt:
+    if len(strr) == 1:
+        res_str = res_str + strr[0]
+    else:
+        res_str = res_str + str((len(strr))) + strr[0]
+print(res_str)
